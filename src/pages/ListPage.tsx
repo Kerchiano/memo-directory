@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MemeCard from "@/components/MemeCard";
 import CardSkeleton from "@/components/CardSkeleton";
 import { Meme } from "@/types";
+import db from "@/data/db.json";
 
 export default function ListPage() {
   const [memes, setMemes] = useState<Meme[]>([]);
@@ -12,20 +13,15 @@ export default function ListPage() {
     const storedMemes = localStorage.getItem("memes");
     if (storedMemes) {
       setMemes(JSON.parse(storedMemes));
-      setIsLoading(false);
     } else {
-      fetch("http://localhost:5000/memes")
-        .then((res) => res.json())
-        .then((data) => {
-          const memesWithLikes = data.map((meme: Meme) => ({
-            ...meme,
-            likes: Math.floor(Math.random() * 100),
-          }));
-          setMemes(memesWithLikes);
-          localStorage.setItem("memes", JSON.stringify(memesWithLikes));
-          setIsLoading(false);
-        });
+      const memesWithLikes = db.memes.map((meme) => ({
+        ...meme,
+        likes: Math.floor(Math.random() * 100),
+      }));
+      setMemes(memesWithLikes);
+      localStorage.setItem("memes", JSON.stringify(memesWithLikes));
     }
+    setIsLoading(false);
   }, []);
 
   const skeletons = Array.from({ length: 10 });

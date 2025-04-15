@@ -5,6 +5,7 @@ import MemeSkeleton from "@/components/MemeSkeleton";
 import MemeEditModal from "@/components/MemeEditModal";
 import { Meme } from "@/types";
 import { useDisclosure } from "@heroui/react";
+import db from '@/data/db.json';
 
 export default function TablePage() {
   const [memes, setMemes] = useState<Meme[]>([]);
@@ -16,20 +17,15 @@ export default function TablePage() {
     const storedMemes = localStorage.getItem("memes");
     if (storedMemes) {
       setMemes(JSON.parse(storedMemes));
-      setIsLoading(false);
     } else {
-      fetch("http://localhost:5000/memes")
-        .then((res) => res.json())
-        .then((data) => {
-          const memesWithLikes = data.map((meme: Meme) => ({
-            ...meme,
-            likes: Math.floor(Math.random() * 100),
-          }));
-          setMemes(memesWithLikes);
-          localStorage.setItem("memes", JSON.stringify(memesWithLikes));
-          setIsLoading(false);
-        });
+      const memesWithLikes = db.memes.map((meme) => ({
+        ...meme,
+        likes: Math.floor(Math.random() * 100),
+      }));
+      setMemes(memesWithLikes);
+      localStorage.setItem("memes", JSON.stringify(memesWithLikes));
     }
+    setIsLoading(false);
   }, []);
 
   const saveMemes = (updatedMemes: Meme[]) => {
@@ -47,7 +43,7 @@ export default function TablePage() {
       const likesValue = Number(selectedMeme.likes);
       const updatedMeme = {
         ...selectedMeme,
-        likes: isNaN(likesValue) ? Math.floor(Math.random() * 100) : likesValue,
+        likes: isNaN(likesValue) || likesValue > 99 ? Math.floor(Math.random() * 100) : likesValue,
       };
       const updatedMemes = memes.map((meme) =>
         meme.id === updatedMeme.id ? updatedMeme : meme
