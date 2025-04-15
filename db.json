@@ -1,0 +1,54 @@
+{
+  "memes": [
+    {
+      "id": 1,
+      "title": "Programmer Humor",
+      "image": "https://i.pinimg.com/736x/e0/68/9d/e0689d4028e2205ee56399cca6c5608e.jpg"
+    },
+    {
+      "id": 2,
+      "title": "When you deploy on Friday",
+      "image": "https://miro.medium.com/v2/resize:fit:1226/1*5CeM-PBDvVIjk69_VOWB8A.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Git commit -m 'final'",
+      "image": "https://cdn.prod.website-files.com/5d938f92cec33181cb8e7c02/674f9a6f846a29e6c0100eb9_646cdf3a96ab7d8302916ae5_git-commit-organized.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "React be like",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosELOkRsPs2n-r4PtDT84fJODwc17lLfD6XqPL04YbYXVk8w2khgkS1lSXKFRJXg2fFk&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "title": "Backend Dev Starter Pack",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgxZ8B2rMi7aG60SInL2-ILDRmBdM_vpLWtg&s"
+    },
+    {
+      "id": 6,
+      "title": "CSS is hard",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCYzeYYrOm_5NyI0o_xkCoYkv35gAdCm2QiA&s"
+    },
+    {
+      "id": 7,
+      "title": "404: Brain not found",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROz16x7HoMUcyH_Kf--YyaVDJOwd457jj1_A&s"
+    },
+    {
+      "id": 8,
+      "title": "Docker in production",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAmoqmFb86cQiJiI9vskTd75EFYJyMH-q9w&s"
+    },
+    {
+      "id": 9,
+      "title": "Me writing tests",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVeSKd_n4ZOiDcu-1h9UVEVHilObbPuwRYSQ&s"
+    },
+    {
+      "id": 10,
+      "title": "Stack Overflow is life",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG9FMZcFbzhfe8Z9Z1mc_dm3oYDCUqNgQBmw&s"
+    }
+  ]
+}
